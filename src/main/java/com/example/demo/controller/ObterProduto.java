@@ -31,8 +31,8 @@ public class ObterProduto {
     }
     @GetMapping("/descricao/{parteDescricao}")
 	public Iterable<Produto> obterProdutosPorNome(@PathVariable String parteDescricao) {
-		return repositorioProduto.findBydescricaoContainingIgnoreCase(parteDescricao);
-		//return repositorioProduto.searchByNameLike(parteDescricao);
+		//return repositorioProduto.findBydescricaoContainingIgnoreCase(parteDescricao);
+		return repositorioProduto.searchByNameLike(parteDescricao);
 	}
 	// @GetMapping(path = "/pagina/{numeroPagina}/{qtdPagina}")
 	// public Iterable<Produto> obterProdutoPorPagina(@PathVariable int numeroPagina, @PathVariable int qtdPagina){
